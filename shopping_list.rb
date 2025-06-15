@@ -38,16 +38,19 @@ loop do
       new_name = gets.chomp
       print "New price (or press Enter to keep): "
       new_price_input = gets.chomp
-      unless new_price_input.strip.empty?
-      new_price = new_price_input.to_f
-      shopping_list[index][:price] = new_price
-    end
 
-      shopping_list[index][:price] = new_price_input.to_f unless new_price_input.empty?
+      shopping_list[index][:name] = new_name unless new_name.empty?
+
+      unless new_price_input.strip.empty?
+        new_price = new_price_input.to_f
+        shopping_list[index][:price] = new_price
+      end
+
       puts "✏️ Updated!"
     else
       puts "❌ Invalid item number."
     end
+
 
   when "d"
     show_list(shopping_list)
